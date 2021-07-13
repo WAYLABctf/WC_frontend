@@ -7,22 +7,22 @@ class Topbar extends React.Component {
     		<div className="topbar">
                 <ul>
                     <li>
-                        Waylab
+                        <a href="/">Waylab</a>
                     </li>
                     <li>
-                        Challenges
+                        <a href="/chall">Challenges</a>
                     </li>
                     <li>
-                        Scoreboard
+                        <a href="/scoreboard">Scoreboard</a>
                     </li>
                     <li>
-                        Signin
+                        <a href="/login">Login</a>
                     </li>
                     <li>
-                        Signup
+                        <a href="/signup">Signup</a>
                     </li>
                     <li>
-                        Info
+                       <a href="/user">User</a>
                     </li>
                 </ul>
         	</div>
