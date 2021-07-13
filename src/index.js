@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Root from './pages/root';
+import { hot } from "react-hot-loader/root";
+const Hot=hot(Root)
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-
+ReactDOM.render(<Hot />, document.getElementById('root'));
