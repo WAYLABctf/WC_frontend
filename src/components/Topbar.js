@@ -3,10 +3,12 @@ import "./Topbar.css"
 
 class Topbar extends React.Component {
 	render() {
+        const LogoUrl="../../images/wlogo_back.png";
     	return (
     		<div className="topbar">
                 <ul>
                     <li>
+                        {/* <img src={LogoUrl} ></img> */}
                         <a href="/">Waylab</a>
                     </li>
                     <li>

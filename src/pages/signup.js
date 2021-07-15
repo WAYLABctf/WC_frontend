@@ -35,7 +35,7 @@ function Signup(){
     const handleSubmit = async data => {
       await axios.post("/api/signup",data)
         .then(function (response){
-          let res=response['data'];
+          const res=response['data'];
           console.log(response);
           switch(res){
             case "email":
