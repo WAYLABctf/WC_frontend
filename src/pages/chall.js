@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Chall() {
-    return (<div>Challenge Page</div>)
+    return (<h1>Challenge Page</h1>)
 };
 
 export default Chall;

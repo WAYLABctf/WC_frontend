@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Scoreboard() {
-    return <div>Scoreboard Page</div>;
+    return <h1>Scoreboard Page</h1>;
 };
 
 export default Scoreboard;

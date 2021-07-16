@@ -30,7 +30,6 @@ function Login(){
         await axios.post("/api/login",data)
           .then(function (response){
             const res=response['data'];
-            console.log(response);
             switch(res){
                 case "not_registered":
                     alert("Not registered..");
@@ -40,6 +39,9 @@ function Login(){
                     break;
                 case "success":
                     document.location.href="/user";
+                    break;
+                case "Please verify your email":
+                    alert("Please verify your email");
                     break;
                 default:
                     alert("error");
