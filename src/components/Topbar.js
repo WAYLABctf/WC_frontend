@@ -1,14 +1,15 @@
 import React from 'react';
 import "./Topbar.css"
 
-class Topbar extends React.Component {
-	render() {
-        const LogoUrl="../../images/wlogo_back.png";
+
+function Topbar (probs) {
+    const isLogin=probs.isLogin;
+
+    console.log("topbar_"+isLogin)
     	return (
     		<div className="topbar">
                 <ul>
                     <li>
-                        {/* <img src={LogoUrl} ></img> */}
                         <a href="/">Waylab</a>
                     </li>
                     <li>
@@ -17,19 +18,29 @@ class Topbar extends React.Component {
                     <li>
                         <a href="/scoreboard">Scoreboard</a>
                     </li>
+                    {isLogin ?(
+                    <>
                     <li>
-                        <a href="/login">Login</a>
+                       <a href="/user">User</a>
                     </li>
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+                    </>
+                    ):(
+                    <>
                     <li>
                         <a href="/signup">Signup</a>
                     </li>
                     <li>
-                       <a href="/user">User</a>
+                        <a href="/login">Login</a>
                     </li>
+                    </>
+                    )
+                    }
                 </ul>
         	</div>
     	)
-    }
 }
 
 export default Topbar;

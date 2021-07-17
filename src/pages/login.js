@@ -40,7 +40,7 @@ function Login(){
                 case "success":
                     document.location.href="/user";
                     break;
-                case "Please verify your email":
+                case "Please verify your email..":
                     alert("Please verify your email");
                     break;
                 default:
