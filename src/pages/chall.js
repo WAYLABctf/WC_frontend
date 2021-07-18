@@ -13,6 +13,7 @@ const Form = ({onSubmit}) => {
         });
         onSubmit(data);
     };
+
     return (
       <form onSubmit={handleSubmit} >
         <Field ref={flagRef} label="flag: " type="text" />
@@ -35,6 +36,7 @@ function Chall() {
       };
 
     const handleSubmit = async data => {
+        
         await axios.post("/api/auth-flag",data)
           .then(function (response){
             const res=response['data'];
@@ -56,12 +58,17 @@ function Chall() {
               alert("server error!, please contact to admin");
           })
     };
+    var arr=['chall1','chall2','chall3']
+    let chall_list=arr.map((value,key)=><Modal key={key} show={ show } close={ handleModalClose } open={ handleModalOpen } title={value}></Modal>);
+
     return (
     <div>
     <h1>Challenge Page</h1>
     <Form onSubmit={handleSubmit} />
     <br></br>
-    <Modal show={ show } close={ handleModalClose } open={ handleModalOpen } title="challenge 1"></Modal>
+    <ul>
+      {chall_list}
+    </ul>
     </div>
     )
 };

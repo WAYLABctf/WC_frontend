@@ -4,8 +4,6 @@ import "./Topbar.css"
 
 function Topbar (probs) {
     const isLogin=probs.isLogin;
-
-    console.log("topbar_"+isLogin)
     	return (
     		<div className="topbar">
                 <ul>
@@ -24,7 +22,7 @@ function Topbar (probs) {
                        <a href="/user">User</a>
                     </li>
                     <li>
-                        <a href="/logout">Logout</a>
+                        <a href="/api/logout">Logout</a>
                     </li>
                     </>
                     ):(
