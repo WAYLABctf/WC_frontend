@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import RankCard from '../components/RankCard';
+import './scoreboard.css';
 
 class Scoreboard extends Component {
     state={
@@ -15,11 +16,9 @@ class Scoreboard extends Component {
           loading:true,
           ranks:data
         })
-        console.log("success");
-        console.log(this.state.isLogin);
       })
       .catch(()=>{
-        console.log("server error!, please contact to admin");
+        alert("server error!, please contact to admin");
       })
     }
     componentDidMount(){
@@ -27,15 +26,26 @@ class Scoreboard extends Component {
     }
     render(){
       return (
-          <div>
-          <h1>Scoreboard Page</h1>
-          {
-              this.state.ranks.map((info,i) =>{
-                  return(
-                      <RankCard rank={info.rank} nickname={info.nickname} pts={info.pts} auth_time={info.auth_time} />
-                  )
+          <div className="container">
+          <table className="scoreboard_table">
+            <thead>
+              <tr>
+                <td>Rank</td>
+                <td>Nickname</td>
+                <td>Score</td>
+                <td>Last Auth Time</td>
+              </tr>
+            </thead>
+            <tbody>
+            {
+            this.state.ranks.map((info,i) =>{
+              return(
+                <RankCard rank={info.rank} nickname={info.nickname} pts={info.pts} auth_time={info.auth_time} />
+                )
               })
             }
+            </tbody>
+          </table>
         </div>
       );
     }

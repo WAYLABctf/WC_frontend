@@ -2,6 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import Field from "../components/Field"
 import qs from 'qs';
+import './signup.css'
+import waylabCTF from "../image/waylabctf_logo1.png"
 
 const Form = ({onSubmit}) => {
     const usernameRef = React.useRef();
@@ -20,13 +22,11 @@ const Form = ({onSubmit}) => {
     };
     return (
       <form onSubmit={handleSubmit} >
-        <Field ref={usernameRef} label="Username: " type="text" />
-        <Field ref={nicknameRef} label="Nickname: " type="text" />
-        <Field ref={emailRef} label="Email: " type="test" placeholder="onlye@dimigo.hs.kr"/>
-        <Field ref={passwordRef} label="Password: " type="password" />
-        <div>
-          <button type="submit">Submit</button>
-        </div>
+        <Field ref={usernameRef} label="Username" name="username" type="text" placeholder="Username" />
+        <Field ref={nicknameRef} label="Nickname" name="nickname" type="text" placeholder="Nickname" />
+        <Field ref={emailRef} label="Email" name="email" type="test" placeholder="example@dimigo.hs.kr"/>
+        <Field ref={passwordRef} label="Password" name="password" type="password" placeholder="Password" />
+        <button type="submit">Sign Up</button>
       </form>
     );
 };
@@ -48,8 +48,29 @@ function Signup(){
               alert("nickname exist..");
               break;
             case "Verification email sent!":
+              document.querySelector(".blinder").classList.add("on");
+              let ss = document.querySelector(".status_span");
+              let dm = '.'
+              setInterval(() => {
+                ss.innerHTML = `Account verification${dm}`;
+                dm += '.';
+                if(dm.length > 3) dm = '.';
+              }, 500);
               alert("Verification email sent 💛\nCheck your email please.");
-              document.location.href="/login";
+              let user_email = `email=${document.querySelector("form").email.value}`;
+              let checking = setInterval(async () => {
+                await axios.post("/api/verify_check", user_email)
+                  .then((response1) => {
+                    if(response1['data'] == 'success') {
+                      alert("Email Verification Success!");
+                      document.location.href="/login";
+                    }
+                  }).catch((err) => {
+                    console.log(err);
+                    alert("Email Verification checking error!");
+                    clearInterval(checking);
+                  })
+              }, 3000);
               break;
             case "Only use a dimigo email.":
               alert("Only dimigo email");
@@ -62,9 +83,21 @@ function Signup(){
         })
     };
     return (
-        <div>
-          <h1>Signup page</h1>
-          <Form onSubmit={handleSubmit} />
+        <div className="container">
+          <div className="signup_container">
+            <span>Sign up</span>
+            <div className="signup_box">
+              <div className="signup_form">
+                <Form onSubmit={handleSubmit} />
+              </div>
+              <div className="logo_container">
+                <img src={waylabCTF} alt="" className="logo" />
+              </div>
+            </div>
+          </div>
+          <div className="blinder">
+            <span className="status_span"></span>
+          </div>
         </div>
       );
 };

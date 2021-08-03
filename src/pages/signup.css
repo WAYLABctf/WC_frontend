@@ -1,0 +1,129 @@
+.signup_container {
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 15px 50px;
+}
+.signup_container > span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.3em;
+    position: absolute;
+    z-index: 1;
+    left: 13%;
+}
+.signup_container > span::before {
+    content: '';
+    background: #ff0090;
+    width: 80%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    z-index: -1;
+}
+.signup_container > span::after {
+    content: '';
+    background: #ff0090;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    z-index: -1;
+}
+
+.signup_box {
+    height: 80%;
+    width: 100%;
+    padding: 0 30px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.signup_form, .logo_container {
+    width: 50%;
+    height: 100%;
+}
+.signup_form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.signup_form form {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.signup_form form > div {
+    text-align: left;
+    width: 70%;
+}
+.signup_form form > div > span {
+    display: block;
+    padding-left: 10px;
+}
+.signup_form form input {
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 1em;
+}
+.signup_form form button {
+    padding: 10px 20px;
+    border-radius: 50px;;
+    color: #ff0090;
+    font-weight: bold;
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo_container .logo {
+    width: 50%;
+    -webkit-user-drag: none;
+}
+
+.blinder {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .5s ease-in-out;
+}
+.blinder span {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    position: absolute;
+}
+.blinder.on {
+    opacity: 1;
+    z-index: 1000000;
+}

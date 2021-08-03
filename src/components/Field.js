@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Field = React.forwardRef(({label, type, placeholder}, ref) => {
+const Field = React.forwardRef(({label, name, type, placeholder}, ref) => {
     return (
       <div>
-        <label>{label}</label>
-        <input ref={ref} type={type} placeholder={placeholder}/>
+        <span>{label}</span>
+        <input ref={ref} type={type} name={name} placeholder={placeholder} required/>
       </div>
     );
 });

@@ -1,0 +1,103 @@
+.login_container {
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 15px 50px;
+}
+.login_container > span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.3em;
+    position: absolute;
+    z-index: 1;
+    left: 13%;
+}
+.login_container > span::before {
+    content: '';
+    background: #ff0090;
+    width: 80%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    z-index: -1;
+}
+.login_container > span::after {
+    content: '';
+    background: #ff0090;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    z-index: -1;
+}
+
+.login_box {
+    height: 80%;
+    width: 100%;
+    padding: 0 30px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login_form, .logo_container {
+    width: 50%;
+    height: 100%;
+}
+.login_form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.login_form form {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+.login_form form > div {
+    text-align: left;
+    width: 70%;
+}
+.login_form form > div > span {
+    display: block;
+    padding-left: 10px;
+}
+.login_form form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 1em;
+}
+.login_form form button {
+    padding: 10px 20px;
+    border-radius: 50px;;
+    color: #ff0090;
+    font-weight: bold;
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo_container .logo {
+    width: 50%;
+    -webkit-user-drag: none;
+}

@@ -1,4 +1,67 @@
-.topbar{
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    box-sizing: border-box;
+}
+.topbar .logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 100px;
+    position: relative;
+    text-shadow:
+    0 0 1px #fff,
+    0 0 4px #fff,
+    0 0 5px #fff,
+    0 0 15px rgb(255, 0, 191),
+    0 0 15px rgb(255, 0, 149),
+    0 0 15px rgb(255, 0, 128),
+    0 0 15px rgb(255, 0, 128),
+    0 0 30px rgb(255, 0, 200);
+}
+.topbar .logo img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+    left: 0px;
+    -webkit-user-drag: none;
+}
+.topbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topbar ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+.topbar ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+.topbar ul li a:hover,
+.topbar ul li a.active {
+    background: #fff;
+    color: #ec137f
+}
+
+
+
+/* .topbar{
     margin:0;
     top:0;
 }
@@ -14,8 +77,8 @@
 .topbar > ul > li{
     padding: 15px;
     cursor:pointer;   
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-left: 1px solid pink;
+    border-right: 1px solid pink;
 }
 .topbar > ul > li > a{
     text-align:center;
@@ -30,7 +93,7 @@ a:visited{
     color:#ff0090;
 }
 .topbar > ul > li:nth-child(1) {
-    background-color:rgb(53, 46, 46);
+    background-color:pink;
     padding-left: 300px;
     padding-right:300px;
-}
+} */

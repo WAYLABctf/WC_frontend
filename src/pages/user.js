@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { useEffect, setState, Component } from 'react';
-
+import { Component } from 'react';
+import "./user.css";
 
 
 class User extends Component{
@@ -30,13 +30,14 @@ class User extends Component{
     {
         const { nickname,rank,score } = this.state.list;
         return (
-            <div>
-            <h1>User Page</h1>
-            <ul>
-                <li>{nickname}</li>
-                <li>{rank}</li>
-                <li>{score}</li>
-            </ul>
+            <div className="container">
+                <div className="user">
+                    <ul>
+                        <li>name : {nickname}</li>
+                        <li>rank : {rank}</li>
+                        <li>score : {score}</li>
+                    </ul>
+                </div>
             </div>
         )
     }

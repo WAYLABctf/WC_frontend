@@ -1,0 +1,21 @@
+
+.user {
+    border-radius: 20px;
+    height: 50%;
+    /* border: 2px solid #ff0090; */
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #ff0090,
+              /* 0 0 0.8rem #bc13fe, */
+              /* 0 0 2.8rem #bc13fe, */
+              inset 0 0 0rem #bc13fe;
+              /* width: 80%; */
+              /* margin-top: 15%; */
+              /* padding: 0 100px 30px; */
+              color: #fff;
+}
+.user ul li{
+    border-bottom: 2px solid #494949;
+    padding: 10px;
+    list-style: none;
+}
